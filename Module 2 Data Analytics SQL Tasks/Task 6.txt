@@ -1,0 +1,9 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+List the top 5 regions with the highest average previous year ratings. ( Round average ratings up to two decimal places if needed)
+
+SELECT region, ROUND(AVG(previous_year_rating ), 2) AS avrg_previous_year_rating 
+FROM employee
+GROUP BY region
+ORDER BY (AVG(previous_year_rating)) DESC
+LIMIT 5;

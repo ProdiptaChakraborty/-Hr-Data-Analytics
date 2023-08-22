@@ -1,0 +1,9 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+List the departments with more than 100 employees having a length of service greater than 5 years.
+
+SELECT department, COUNT(employee_id) AS employee_count
+FROM employee 
+WHERE length_of_service > 5 
+GROUP BY department 
+HAVING COUNT(employee_id) > 100;

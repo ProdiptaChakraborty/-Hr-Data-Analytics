@@ -1,0 +1,8 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Show the number of employees who have met more than 80% of KPIs for each recruitment channel and education level.
+
+SELECT recruitment_channel, education, COUNT(*) AS num_employees
+FROM employee
+WHERE KPIs_met_more_than_80 = 1
+GROUP BY recruitment_channel, education;

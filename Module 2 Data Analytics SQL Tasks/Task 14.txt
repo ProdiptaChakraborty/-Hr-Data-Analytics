@@ -1,0 +1,9 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Calculate the percentage of employees in each department who have received awards, have a previous_year_rating of 4 or 5, and an average training score above 70, grouped by department and gender ( Round percentage up to two decimal places if needed).
+
+
+SELECT department, gender,
+       ROUND((SUM(CASE WHEN awards_won = 1 AND previous_year_rating IN (4,5) AND avg_training_score > 70 THEN 1 ELSE 0 END) / COUNT(DISTINCT CONCAT(employee_id, department, gender)) * 100), 2) AS award_percentage
+FROM employee
+GROUP BY department, gender;

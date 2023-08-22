@@ -1,0 +1,3 @@
+Module 1 Data Pre- processing Tasks
+
+In this task you will be working on handling null values, deletion or transformation of irrelevant values, data type transformation, removing duplicates and data validations. Once you have completed this task, you will get a refined and cleaner data set for further analysis.

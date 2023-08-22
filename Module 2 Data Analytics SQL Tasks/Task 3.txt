@@ -1,0 +1,7 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Find the percentage of employees who have won awards in each region. (Round percentages up to two decimal places if needed)
+
+
+select round(sum(awards_won)*100/(select count(*) from employee where 
+awards_won > 0),2) perc, region from employee group by region having perc > 0;

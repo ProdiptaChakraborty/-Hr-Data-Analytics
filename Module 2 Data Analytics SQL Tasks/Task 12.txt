@@ -1,0 +1,10 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Calculate the average length of service for employees per education level and gender, considering only those employees who have completed more than 2 trainings and have an average training score greater than 75 ( Round average length up to two decimal places if needed)
+
+
+SELECT education, gender, 
+       ROUND(AVG(length_of_service), 2) AS avg_length_of_service
+FROM employee
+WHERE no_of_trainings > 2 AND avg_training_score > 75
+GROUP BY education, gender;

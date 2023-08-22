@@ -1,0 +1,8 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Show the average length of service for employees who have attended more than 3 training, grouped by department and gender. ( Round average length up to two decimal places if needed)
+
+SELECT department, gender, ROUND(AVG(length_of_service), 2) AS avg_service_length
+FROM employee
+WHERE no_of_trainings > 3
+GROUP BY department, gender;

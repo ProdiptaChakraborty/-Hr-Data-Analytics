@@ -1,0 +1,11 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+For each department and recruitment channel, find the total number of employees who have met more than 80% of their KPIs, have a previous_year_rating of 5, and have a length of service greater than 10 years.
+
+
+SELECT department, recruitment_channel, COUNT(*) AS total_employees
+FROM employee
+WHERE KPIs_met_more_than_80 = 1 
+AND previous_year_rating = 5 
+AND length_of_service > 10
+GROUP BY department, recruitment_channel;

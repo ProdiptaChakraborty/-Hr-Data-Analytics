@@ -1,0 +1,12 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Find the percentage of female employees who have won awards, per department. Also show the number of female employees who won awards and total female employees. ( Round percentage up to two decimal places if needed)
+
+SELECT department,
+       ROUND((SUM(CASE WHEN awards_won = 1 AND gender = 'f' THEN 1 ELSE 0 END) / COUNT(CASE WHEN gender = 'f' THEN 1 END) * 100), 2) AS female_award_perc,
+       SUM(CASE WHEN awards_won = 1 AND gender = 'f' THEN 1 ELSE 0 END) AS female_award_count,
+       COUNT(CASE WHEN gender = 'f' THEN 1 END) AS female_count
+FROM employee
+GROUP BY department
+HAVING female_count > 0
+ORDER BY department;

@@ -1,0 +1,8 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Find the average length of service for employees in each department, considering only employees with previous year ratings greater than or equal to 4. ( Round average length up to two decimal places if needed)
+
+SELECT department, ROUND(AVG(length_of_service), 2) AS avg_length_of_service
+FROM employee
+WHERE previous_year_rating >= 4
+GROUP BY department;

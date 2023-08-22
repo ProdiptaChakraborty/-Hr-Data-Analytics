@@ -1,0 +1,11 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Find the top 3 regions with the highest number of employees who have met more than 80% of their KPIs and received at least one award, grouped by department and region.
+
+
+SELECT department, region, COUNT(employee_id) as num_employees
+FROM employee
+WHERE KPIs_met_more_than_80 = 1 AND awards_won >= 1
+GROUP BY department, region
+ORDER BY num_employees DESC
+LIMIT 3;

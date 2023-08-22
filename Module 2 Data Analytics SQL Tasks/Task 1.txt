@@ -1,0 +1,7 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Find the average age of employees in each department and gender group. ( Round average age up to two decimal places if needed).
+
+SELECT department, gender, ROUND(AVG(age), 2) AS avg_age
+FROM employee
+GROUP BY department, gender;

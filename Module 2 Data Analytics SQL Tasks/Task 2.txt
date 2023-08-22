@@ -1,0 +1,9 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+List the top 3 departments with the highest average training scores. ( Round average scores up to two decimal places if needed)
+
+SELECT department, ROUND(AVG(avg_training_score), 2) AS avg_score
+FROM employee
+GROUP BY department
+ORDER BY avg_score DESC
+LIMIT 3;

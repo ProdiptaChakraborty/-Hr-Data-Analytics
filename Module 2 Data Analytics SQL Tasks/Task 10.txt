@@ -1,0 +1,8 @@
+Write An SQL Query To Solve The Given Problem Statement.
+
+Calculate the percentage of employees per department who have a length of service between 5 and 10 years. ( Round percentage up to two decimal places if needed)
+
+SELECT department,
+       ROUND(COUNT(CASE WHEN length_of_service BETWEEN 5 AND 10 THEN 1 END) / COUNT(*) * 100, 2) AS percentage
+FROM employee
+GROUP BY department;
